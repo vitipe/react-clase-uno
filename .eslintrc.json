@@ -1,0 +1,35 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "linebreak-style": 0,
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "js": "always",
+              "jsx": "never",
+              "ts": "never",
+              "tsx": "never"
+            }
+         ],
+        "func-names": 0,
+        "no-param-reassign": 0
+    }
+}
