@@ -1,8 +1,10 @@
-import { Welcome } from './components/Welcome.js';
+import { Tarjeta } from './tarea/Tarea1.js';
 
 ReactDOM.render(
-  <Welcome
-    nombre="Julián"
+  <Tarjeta 
+    nombre="Víctor Hugo Peñas"
+    titulo="Geógrafo"
+    imagen="https://avatars.githubusercontent.com/u/15741762?v=4"
   />,
   document.getElementById('react-app'),
 );

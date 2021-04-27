@@ -34,7 +34,21 @@
  * Si no quieren poner una foto suya, pueden tomar la URL de su imagen de perfil de github, como hice yo.
  */
 
-export function Tarjeta(props) {}
+export function Tarjeta(props) {
+  return (
+    <div className="tarjeta">
+      <img
+        src={props.imagen}
+        alt="Foto de perfil"
+        className="tarjeta-img"
+      />
+      <div className="tarjeta-data">
+        <header className="tarjeta-data-header">{props.nombre}</header>
+        <span>{props.titulo}</span>
+      </div>
+    </div>
+  );
+}
 
 /*
  * El esqueleto de este componente será nuestro primer post en un blog.
@@ -44,9 +58,9 @@ export function Tarjeta(props) {}
  * Reemplazar los tres párrafos de texto por una prop llamada "parrafos".
  * Esta prop será un string con saltos de texto para representar los diferentes párrafos.
  * Para hacer saltos de texto en un string común, pueden agregar \n donde los quieran agregar.
- * 
+ *
  * Ejemplo: "Hoy vi una ardilla.\nLa ardilla era negra."
- * 
+ *
  * O si prefieren, pueden hacerlo con un template string:
 
  `Hoy vi una ardilla.
@@ -54,31 +68,31 @@ La ardilla era negra.`
 
  * Sin embargo, verán que al tratar de imprimir esto, todo aparecerá dentro del mismo párrafo.
  * Por como funciona HTML, los diferentes párrafos deben estar en diferentes elementos <p>.
- * Podemos lograr este efecto haciendo `parrafo.split('\n').map()` y devolver un 
+ * Podemos lograr este efecto haciendo `parrafo.split('\n').map()` y devolver un
  * <p className="post-paragraph">{...}</p> en cada posición del array.
- * 
+ *
  * Si quieren un ejemplo de esto, pueden ver el archivo src/components/Page.js
- * 
+ *
  * Una vez que tengamos hecho esto, solo nos queda reemplazar los valores de la tarjeta.
- * Estos valores deberían venir por las props también, pero queda raro pasarle 
+ * Estos valores deberían venir por las props también, pero queda raro pasarle
  * cosas como "nombre" o "imagen de perfil" a un componente "BlogPost".
- * 
+ *
  * Lo que haremos para evitar eso es pasar como prop un objeto "autor" que tenga la siguiente pinta:
  * {
  *   nombre: "Tu nombre",
  *   titulo: "Tu título",
  *   imagen: "URL de tu imagen"
  * }
- * 
+ *
  * Luego se le puede pasar a Tarjeta esas props haciendo <Tarjeta nombre={props.autor.nombre} ... />
- * 
+ *
  * Existe una forma más corta de hacerlo, escribiendo <Tarjeta {...props.autor} />.
  * Esto se llama object spread, no estoy seguro si lo llegaré a explicar en la clase o si lo habrán visto en algún lado.
  * Si no entienden como funciona, es preferible hacerlo de la manera anterior.
  * Veremos qué significa esta sintáxis en la próxima clase, si no lo hemos hecho aún.
- * 
+ *
  * Para recrear el BlogPost terminado con los datos originales, deberían poder usar este elemento:
- * 
+ *
 
 <BlogPost
   titulo="Ardillas"
