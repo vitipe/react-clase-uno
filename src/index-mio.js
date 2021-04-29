@@ -1,10 +1,10 @@
-import { Tarjeta } from './tarea/Tarea1.js';
+/* eslint-disable react/react-in-jsx-scope */
+import { Tarjeta, BlogPost } from './tarea/Tarea1.js';
 
 ReactDOM.render(
-  <Tarjeta 
-    nombre="Víctor Hugo Peñas"
-    titulo="Geógrafo"
-    imagen="https://avatars.githubusercontent.com/u/15741762?v=4"
+  <BlogPost
+    titulo="Título"
+    parrafos="Hoy vi una ardilla.&La ardilla era negra."
   />,
   document.getElementById('react-app'),
 );
