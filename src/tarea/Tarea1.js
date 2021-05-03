@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 /*
  * Para empezar, hagan que el componente devuelva este fragmento de html,
  * con los cambios necesarios para que sea compatible con JSX
@@ -113,7 +114,7 @@ export function BlogPost(props) {
     <article className="post">
       <header className="post-header">
         <h2 className="post-title">{props.titulo}</h2>
-        <Tarjeta nombre="Tu nombre" titulo="Tu titulo" imagen="" />
+        <Tarjeta nombre={props.autor.nombre} titulo={props.autor.titulo} imagen={props.autor.imagen} />
       </header>
       {props.parrafos.split('&').map((parrafo, index) => (
         <p key={index} className="post-paragraph">

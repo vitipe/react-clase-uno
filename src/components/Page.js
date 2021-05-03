@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+
 function Article(props) {
   const contenido = props.contenido;
 
