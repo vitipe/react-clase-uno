@@ -124,3 +124,21 @@ export function BlogPost(props) {
     </article>
   );
 }
+
+
+// Así quedo al final el index-mio.js:
+
+// ReactDOM.render(
+//   <BlogPost
+//     titulo="Ardillas"
+//     parrafos={`Hoy vi una ardilla.
+// La ardilla era negra, era más grande que otras ardillas, tenía muchos dientes grandes y encima andaba siempre en cuatro patas, moviendo la cola.
+// Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
+//     autor={{
+//       nombre: 'Víctor',
+//       titulo: 'Blog #1',
+//       imagen: 'https://avatars.githubusercontent.com/u/15741762?s=400&u=7f59b3c75677e496cf4bb1c979405afe2dc05338&v=4',
+//     }}
+//   />,
+//   document.getElementById('react-app'),
+// );

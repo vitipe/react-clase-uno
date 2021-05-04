@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 /*
  * Este componente debe renderizar un input que cambie de clase cuando contiene tu nombre.
  * Recibirá una prop: nombre (un string con tu nombre).
@@ -12,7 +13,18 @@
  * Para obtener el valor del input en el event handler, deberán usar la propiedad `event.target.value`.
  */
 
-export function MatchNombre(props) {}
+export function MatchNombre(props) {
+  const [value, setValue] = React.useState(false);
+
+  return (
+    <input
+      nombre={props.nombre}
+      onChange={(event) => setValue(event.target.value)}
+      className={value === props.nombre ? "input input-match" : "input"}
+      // Si no también se puede className={"input " + (value === props.nombre && "input-match")
+    />
+  );
+}
 
 /*
  * Componentes como este son usados a menudo para hacer validaciones de inputs
@@ -32,7 +44,18 @@ export function MatchNombre(props) {}
  * Si hicieron todo bien, el input se pondrá rojo si no pasaron el tamaño mínimo de la contraseña.
  */
 
-export function PasswordInput(props) {}
+export function PasswordInput(props) {
+  const [value, setValue] = React.useState(false);
+
+  return (
+    <input
+      nombre={props.nombre}
+      onChange={(event) => setValue(event.target.value)}
+      className={value === props.nombre ? "input input-match" : "input"}
+      // Si no también se puede className={"input " + (value === props.nombre && "input-match")
+    />
+  );
+}
 
 /*
  * Estos componentes están bastante buenos, pero estamos repitiendo mucho código,
