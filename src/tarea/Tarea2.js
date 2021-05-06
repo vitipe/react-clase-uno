@@ -51,7 +51,7 @@ export function PasswordInput(props) {
     <input
     type={props.type}
       onChange={(event) => setValue(event.target.value.length)}
-      className={value < Number(props.minLength) ? 'input input-match' : 'input'}
+      className={value > 0 && value < Number(props.minLength) ? 'input input-match' : 'input'}
     />
   );
 }
