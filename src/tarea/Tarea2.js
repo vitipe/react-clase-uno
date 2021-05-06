@@ -20,7 +20,7 @@ export function MatchNombre(props) {
     <input
       nombre={props.nombre}
       onChange={(event) => setValue(event.target.value)}
-      className={value === props.nombre ? "input input-match" : "input"}
+      className={value === props.nombre ? 'input input-match' : 'input'}
       // Si no también se puede className={"input " + (value === props.nombre && "input-match")
     />
   );
@@ -49,10 +49,9 @@ export function PasswordInput(props) {
 
   return (
     <input
-      nombre={props.nombre}
-      onChange={(event) => setValue(event.target.value)}
-      className={value === props.nombre ? "input input-match" : "input"}
-      // Si no también se puede className={"input " + (value === props.nombre && "input-match")
+    type={props.type}
+      onChange={(event) => setValue(event.target.value.length)}
+      className={value < Number(props.minLength) ? 'input input-match' : 'input'}
     />
   );
 }

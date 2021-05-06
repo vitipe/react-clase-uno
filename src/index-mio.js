@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 // import { BlogPost } from './tarea/Tarea1.js';
-import { MatchNombre } from './tarea/Tarea2.js';
+import { MatchNombre, PasswordInput } from './tarea/Tarea2.js';
 
 // ReactDOM.render(
 //   <BlogPost
@@ -18,9 +18,10 @@ import { MatchNombre } from './tarea/Tarea2.js';
 // );
 
 ReactDOM.render(
-  <MatchNombre
-    nombre="Victor"
-    onChange={() => alert(event.target.value)}
+  <PasswordInput
+    type="password"
+    minLength="8"
+    // onChange={() => alert(event.target.value)}
   />,
   document.getElementById('react-app'),
 );
