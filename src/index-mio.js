@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 // import { BlogPost } from './tarea/Tarea1.js';
-import { MatchNombre, PasswordInput } from './tarea/Tarea2.js';
+import { MatchNombre, PasswordInput, ValidationInput } from './tarea/Tarea2.js';
 
 // ReactDOM.render(
 //   <BlogPost
@@ -18,9 +18,9 @@ import { MatchNombre, PasswordInput } from './tarea/Tarea2.js';
 // );
 
 ReactDOM.render(
-  <PasswordInput
-    type="password"
-    minLength="8"
+  <ValidationInput
+    validation={(value) => value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)}
+    isPassword={false}
     // onChange={() => alert(event.target.value)}
   />,
   document.getElementById('react-app'),

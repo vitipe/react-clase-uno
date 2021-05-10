@@ -49,7 +49,7 @@ export function PasswordInput(props) {
 
   return (
     <input
-    type={props.type}
+      type={props.type}
       onChange={(event) => setValue(event.target.value.length)}
       className={value > 0 && value < Number(props.minLength) ? 'input input-match' : 'input'}
     />
@@ -82,4 +82,28 @@ export function PasswordInput(props) {
  * Si quieren, pueden agregar una prop extra "isPassword". Si es true el input deberá tener type="password".
  */
 
-export function ValidationInput(props) {}
+export function ValidationInput(props) {
+  const [value, setValue] = React.useState('');
+
+  return (
+    <input
+      type={props.isPassword ? 'password' : 'email'}
+      placeholder="Escriba su email"
+      onChange={(event) => setValue(event.target.value)}
+      className={props.validation(value) ? 'input' : 'input input-match'}
+      value={value}
+    />
+  );
+}
+
+/*
+Así sería para usar este último componente
+ReactDOM.render(
+  <ValidationInput
+    validation={(value) => value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)}
+    isPassword={false}
+    // onChange={() => alert(event.target.value)}
+  />,
+  document.getElementById('react-app'),
+);
+*/
